@@ -27,7 +27,17 @@ namespace CMP1903M_Assessment_1_Base_Code
             for (int i = 0; i < 5; i++)
             {
                 values.Add(0);
+
             }
+
+            for (int i = 0; i < input.Length; i++)
+            {
+                if (input[i] == '.' || input[i] == '?' || input[i] == '!')
+                {
+                    values[0]++;
+                }
+            }
+
 
 
             return values;

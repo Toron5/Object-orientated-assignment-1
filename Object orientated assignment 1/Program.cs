@@ -1,9 +1,4 @@
 ﻿//Base code project for CMP1903M Assessment 1
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CMP1903M_Assessment_1_Base_Code
 {
@@ -27,22 +22,26 @@ namespace CMP1903M_Assessment_1_Base_Code
                 }
 
                 Input input = new Input();
+                Analyse analyse = new Analyse();
 
 
                 if (Option == "1")
                 {
-                 string text = Console.ReadLine();
-                 Console.WriteLine(text);
-                    
+                    string text = input.manualTextInput();
+                    Console.WriteLine(text);
+                    List<int> parameters = analyse.analyseText(text);
+
                 }
                 if (Option == "2")
                 {
-                 Console.WriteLine(" 2: File Input chosen");
+                    Console.WriteLine(" 2: File Input chosen");
                 }
+                Console.WriteLine("out");
+                //Local list of integers to hold the first five measurements of the text
+
             }
 
-            //Local list of integers to hold the first five measurements of the text
-            List<int> parameters = new List<int>();
+
 
             //Create 'Input' object
             //Get either manually entered text, or text from a file

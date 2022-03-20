@@ -36,11 +36,60 @@ namespace CMP1903M_Assessment_1_Base_Code
                 {
                     values[0]++;
                 }
+
+
+                if (input[i] == 'a' || input[i] == 'e' || input[i] == 'i' || input[i] == 'o' || input[i] == 'u' || input[i] == 'A' || input[i] == 'E' || input[i] == 'I' || input[i] == 'O' || input[i] == 'U')
+                {
+                    values[1]++;
+                }
+                else if ((input[i] >= 'a' && input[i] <= 'z') || (input[i] >= 'A' && input[i] <= 'Z'))
+                {
+                    values[2]++;
+                }
+                if (Char.IsUpper(input[i]))
+                {
+                    values[3]++;
+                }
+                else if (Char.IsLower(input[i]))
+                {
+                    values[4]++;
+                }
+            }
+            return values;
+        }
+        public Dictionary<char, int> countLetters(string input)
+        {
+            Dictionary<char, int> letters = new Dictionary<char, int>();
+
+            //For each letter in the input, increment its count
+            foreach (char letter in input)
+            {
+                if (!letters.ContainsKey(letter))
+                {
+                    letters.Add(letter, 0);
+                }
+
+                letters[letter]++;
             }
 
+            return letters;
+        }
+        public List<string> extractLongWords(string text, int minLength = 7)
+        {
+            List<string> longWords = new List<string>();
 
+            //Split text into list of words
+            List<string> words = text.Split(" ").ToList();
+            foreach (string word in words)
+            {
+                //If word length is at least minLength, add it to the long words list
+                if (word.Length >= minLength)
+                {
+                    longWords.Add(word);
+                }
+            }
 
-            return values;
+            return longWords;
         }
     }
 }

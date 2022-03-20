@@ -23,18 +23,51 @@ namespace CMP1903M_Assessment_1_Base_Code
 
                 Input input = new Input();
                 Analyse analyse = new Analyse();
-
-
+                Report report = new Report();
+                string text = "";
                 if (Option == "1")
                 {
-                    string text = input.manualTextInput();
+                    text = input.manualTextInput();
                     Console.WriteLine(text);
                     List<int> parameters = analyse.analyseText(text);
+                    report.reportOutput(parameters);
 
+                    Dictionary<char, int> letterCounts = analyse.countLetters(text);
+                    report.outputDictionary(letterCounts);
+
+                    string userLongWordsReportChoice = Console.ReadLine();
+                    if (userLongWordsReportChoice.ToLower() == "y")
+                    {
+                        //Write report of long words to LongWords.txt
+                        List<string> longWords = analyse.extractLongWords(text);
+                        report.writeListToFile(longWords, "LongWords.txt");
+                        Console.WriteLine("Long words have been written to: LongWords.txt");
+                    }
                 }
                 if (Option == "2")
                 {
                     Console.WriteLine(" 2: File Input chosen");
+                    text = input.fileTextInput("./TestFile.txt");
+                    Console.WriteLine("");
+                    Console.WriteLine("Input read from file:");
+                    Console.WriteLine("----------");
+                    Console.WriteLine(text);
+                    Console.WriteLine("----------");
+                    Console.WriteLine("");
+                    List<int> parameters = analyse.analyseText(text);
+                    report.reportOutput(parameters);
+
+                    Dictionary<char, int> letterCounts = analyse.countLetters(text);
+                    report.outputDictionary(letterCounts);
+
+                    string userLongWordsReportChoice = Console.ReadLine();
+                    if (userLongWordsReportChoice.ToLower() == "y")
+                    {
+                        //Write report of long words to LongWords.txt
+                        List<string> longWords = analyse.extractLongWords(text);
+                        report.writeListToFile(longWords, "LongWords.txt");
+                        Console.WriteLine("Long words have been written to: LongWords.txt");
+                    }
                 }
                 Console.WriteLine("out");
                 //Local list of integers to hold the first five measurements of the text

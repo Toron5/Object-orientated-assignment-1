@@ -10,11 +10,11 @@ namespace CMP1903M_Assessment_1_Base_Code
     {
         public void reportOutput(List<int> parameters)
         {
-            Console.WriteLine("Number of sentences entered = {0}", parameters[0]);
-            Console.WriteLine("Number of vowels = {0}", parameters[1]);
-            Console.WriteLine("Number of consonants = {0}", parameters[2]);
-            Console.WriteLine("Number of upper case letters = {0}", parameters[3]);
-            Console.WriteLine("Number of lower case letters = {0}", parameters[4]);
+            Console.WriteLine("Sentences used --> = {0}", parameters[0]);
+            Console.WriteLine("Vowels used --> = {0}", parameters[1]);
+            Console.WriteLine("Consonants used --> = {0}", parameters[2]);
+            Console.WriteLine("Upper case letters used --> = {0}", parameters[3]);
+            Console.WriteLine("Lower case letters used --> = {0}", parameters[4]);
         }
         //Handles the reporting of the analysis
         //Maybe have different methods for different formats of output?

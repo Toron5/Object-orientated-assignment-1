@@ -10,7 +10,7 @@ namespace CMP1903M_Assessment_1_Base_Code
     public class Input
     {
         //Handles the text input for Assessment 1
-        string text = "nothing";
+        string text = "";
 
         //Method: manualTextInput
         //Arguments: none
@@ -18,7 +18,7 @@ namespace CMP1903M_Assessment_1_Base_Code
         //Gets text input from the keyboard
         public string manualTextInput()
         {
-            Console.WriteLine("returned");
+            
 
             while(!text.EndsWith('*'))
             {

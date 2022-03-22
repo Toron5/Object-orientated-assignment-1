@@ -18,10 +18,11 @@ namespace CMP1903M_Assessment_1_Base_Code
         //Gets text input from the keyboard
         public string manualTextInput()
         {
-            
+            //checks to see if the input ends with an *
 
             while(!text.EndsWith('*'))
             {
+                // keeps adding on text untill it reads an *
                 text = text + Console.ReadLine();
             }
             return text;
@@ -36,6 +37,7 @@ namespace CMP1903M_Assessment_1_Base_Code
             text = File.ReadAllText(fileName);
             //Get text leading up to the first '*'
             text = text.Split('*')[0];
+            // returns text back to the Program
             return text;
         }
 

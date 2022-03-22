@@ -49,13 +49,13 @@ namespace CMP1903M_Assessment_1_Base_Code
                     //prints out the text so the user can see what they wrote
                     Console.WriteLine(text);
                     // creates a list that has all the processed text in it
-                    List<int> parameters = analyse.analyseText(text);
+                    List<int> sorted_text = analyse.analyseText(text);
                     // prints out the information about the text as a whole e.g number of sentenes used, capital letters used. (not counting each letter)
-                    report.reportOutput(parameters);
-                    // creates a dictonary that will hold the indivdual letters after it has been process through the countLetters class
-                    Dictionary<char, int> letterCounts = analyse.countLetters(text);
+                    report.reportOutput(sorted_text);
+                    // creates a dictonary that will hold the indivdual letters after it has been process through the text_letters class
+                    Dictionary<char, int> counted_text = analyse.text_letters(text);
                     //prints out the dictonary
-                    report.outputDictionary(letterCounts);
+                    report.Print_Dictionary(counted_text);
                     // asks the user if they want a long text file 
                     Console.WriteLine("do you want a long text file y/n");
 
@@ -66,9 +66,9 @@ namespace CMP1903M_Assessment_1_Base_Code
                         
                         Console.Clear();
                         //Writes a report of long words to LongWords.txt
-                        List<string> longWords = analyse.extractLongWords(text);
+                        List<string> longWords = analyse.text_LongWords(text);
                         // processes the longwords list writes it into a file
-                        report.writeListToFile(longWords, "LongWords.txt");
+                        report.WriteToFile(longWords, "LongWords.txt");
                         Console.WriteLine("Long words have been written to: LongWords.txt");
                     }
                 }
@@ -88,21 +88,21 @@ namespace CMP1903M_Assessment_1_Base_Code
                     Console.WriteLine("");
 
                     // creates a list that has all the processed text in it 
-                    List<int> parameters = analyse.analyseText(text);
-                    report.reportOutput(parameters);
-                    // creates a dictonary that will hold the indivdual letters after it has been process through the countLetters class
-                    Dictionary<char, int> letterCounts = analyse.countLetters(text);
+                    List<int> sorted_text = analyse.analyseText(text);
+                    report.reportOutput(sorted_text);
+                    // creates a dictonary that will hold the indivdual letters after it has been process through the text_letters class
+                    Dictionary<char, int> counted_text = analyse.text_letters(text);
                     //prints out the dictonary
-                    report.outputDictionary(letterCounts);
+                    report.Print_Dictionary(counted_text);
                     // asks the user if they want a long text file 
                     Console.WriteLine("do you want a long text file y/n");
-                    string userLongWordsReportChoice = Console.ReadLine();
-                    if (userLongWordsReportChoice.ToLower() == "y")
+                    string LongWordFileChoice = Console.ReadLine();
+                    if (LongWordFileChoice.ToLower() == "y")
                     {
                         //Write report of long words to LongWords.txt
-                        List<string> longWords = analyse.extractLongWords(text);
+                        List<string> longWords = analyse.text_LongWords(text);
                         // processes the longwords list writes it into a file
-                        report.writeListToFile(longWords, "LongWords.txt");
+                        report.WriteToFile(longWords, "LongWords.txt");
                         Console.WriteLine("Long words have been written to: LongWords.txt");
                     }
                 }

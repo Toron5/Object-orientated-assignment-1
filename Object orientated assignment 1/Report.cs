@@ -9,21 +9,21 @@ namespace CMP1903M_Assessment_1_Base_Code
     class Report
     {
         // takes in the splitted values from the input that have gone through the Analyse text function
-        public void reportOutput(List<int> parameters)
+        public void reportOutput(List<int> sorted_text)
         {
             // splits each value individualy and outputs their meaning 
-            Console.WriteLine("Sentences used --> = {0}", parameters[0]);
-            Console.WriteLine("Vowels used --> = {0}", parameters[1]);
-            Console.WriteLine("Consonants used --> = {0}", parameters[2]);
-            Console.WriteLine("Upper case letters used --> = {0}", parameters[3]);
-            Console.WriteLine("Lower case letters used --> = {0}", parameters[4]);
+            Console.WriteLine("Sentences used --> = {0}", sorted_text[0]);
+            Console.WriteLine("Vowels used --> = {0}", sorted_text[1]);
+            Console.WriteLine("Consonants used --> = {0}", sorted_text[2]);
+            Console.WriteLine("Upper case letters used --> = {0}", sorted_text[3]);
+            Console.WriteLine("Lower case letters used --> = {0}", sorted_text[4]);
         }
         //Handles the reporting of the analysis
         //Maybe have different methods for different formats of output?
         //eg.   public void outputConsole(List<int>)
 
         //this outputs the Dictonary in a readable way for the user
-        public void outputDictionary(Dictionary<char, int> dict)
+        public void Print_Dictionary(Dictionary<char, int> dict)
         {
             // key value pair checks for each matching pair 
             foreach (KeyValuePair<char, int> entry in dict)
@@ -34,7 +34,7 @@ namespace CMP1903M_Assessment_1_Base_Code
         }
 
         //creates a long words file
-        public void writeListToFile(List<string> list, string fileName)
+        public void WriteToFile(List<string> list, string fileName)
         {
             File.WriteAllLines(fileName, list);
         }

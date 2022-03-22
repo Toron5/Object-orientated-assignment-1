@@ -68,7 +68,7 @@ namespace CMP1903M_Assessment_1_Base_Code
             //returns the list back to the Program
             return values;
         }
-        public Dictionary<char, int> countLetters(string input)
+        public Dictionary<char, int> text_letters(string input)
         {
             //Creates a dictonary that will count how many times a letter was used and record the letter and amount
             Dictionary<char, int> letters = new Dictionary<char, int>();
@@ -90,7 +90,7 @@ namespace CMP1903M_Assessment_1_Base_Code
         }
 
         // this will check for long words by the length of 7 or more characters
-        public List<string> extractLongWords(string text, int minLength = 7)
+        public List<string> text_LongWords(string text, int minLength = 7)
         {
             //creating a list to store the long words in to it can be made into a long words file
             List<string> longWords = new List<string>();

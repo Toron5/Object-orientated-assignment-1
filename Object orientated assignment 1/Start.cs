@@ -15,7 +15,7 @@ namespace CMP1903M_Assessment_1_Base_Code
         // Asks the User what option they want to choose
             Console.WriteLine("Pick a number:");
             Console.WriteLine("----------------------");
-            Console.WriteLine(" 1: User Input\n 2: File Input\n 3: Quit");
+            Console.WriteLine(" 1. Do you want to enter the text via the keyboard? \n 2. Do you want to read in the text from a file?\n 3: Quit");
             Console.WriteLine("----------------------");
         // reads the option and defines it 
         

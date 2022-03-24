@@ -96,19 +96,30 @@ namespace CMP1903M_Assessment_1_Base_Code
                     report.Print_Dictionary(counted_text);
                     // asks the user if they want a long text file 
                     Console.WriteLine("do you want a long text file y/n");
+                    
                     string LongWordFileChoice = Console.ReadLine();
+                    while (LongWordFileChoice != "y" && LongWordFileChoice != "n" )
+                       
+                           LongWordFileChoice = Console.ReadLine();
+
                     if (LongWordFileChoice.ToLower() == "y")
                     {
                         //Write report of long words to LongWords.txt
                         List<string> longWords = analyse.text_LongWords(text);
                         // processes the longwords list writes it into a file
                         report.WriteToFile(longWords, "LongWords.txt");
+                        Console.Clear();
                         Console.WriteLine("Long words have been written to: LongWords.txt");
                     }
+                    Console.Clear();
+                    Console.WriteLine("Long words have not been writen into a file");
+                    ;
+
+
                 }
-                
-                
-            
+
+
+
             }
 
 

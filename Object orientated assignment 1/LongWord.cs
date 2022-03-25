@@ -18,5 +18,24 @@ namespace CMP1903M_Assessment_1_Base_Code
 
             return ;
         }
+
+        public string LongWordOption( )
+        {
+            string LongText = Console.ReadLine();
+            try
+            {
+                if (LongText != "y" && LongText != "n")
+                {
+                    throw new InvalidInputException(LongText);
+                }
+
+
+            }
+            catch (Exception ex)
+            { Console.WriteLine("Invalid input try again", ex.Message);
+                return LongWordOption();
+            }
+            return LongText;
+        }
     }
 }

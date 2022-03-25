@@ -10,26 +10,26 @@ namespace CMP1903M_Assessment_1_Base_Code
         static void Main()
         {
             // defines an end bool to keep the program looping untill quit is chosen
-            bool End = false;
-            while (End != true)
+            
+            while (true)
             {
                 LongWord longWord = new LongWord();
                 
                 //creates start as an object 
                 Start start = new Start();
                 //define the string choice as blank 
-                string Choice = "";
+                
                 // creates option variable where the number choice of what the code does is chosen
                 // goes into the start class and runs though 
                 //Get either manually entered text or text from a file
-                string Option = start.UserInput(Choice);
+                string Option = start.UserInput();
                 // returns the Option value which will be 1 ,2 or 3
 
                 // if option 3 is chosen the program will end
                 if (Option == "3")
                 {
                     // changes the value of end to true and will end the code loop
-                    End = true;
+                    break;
                 }
 
                 //Creates Input, analyse and report object
@@ -61,10 +61,12 @@ namespace CMP1903M_Assessment_1_Base_Code
                     // asks the user if they want a long text file 
                     Console.WriteLine("do you want a long text file y/n");
 
-                    string LongText = Console.ReadLine();
+                    
+                    string LongTextChoice = longWord.LongWordOption();
+                    
 
                     // checks if the user chose y
-                    if (LongText.ToLower() == "y")
+                    if (LongTextChoice.ToLower() == "y")
                     {
                         longWord.LongWordChoice(text);
                         //Console.Clear();
@@ -83,12 +85,11 @@ namespace CMP1903M_Assessment_1_Base_Code
                     Console.WriteLine(" 2: File Input chosen");
                     // defines text as the file input 
                     text = input.fileTextInput("./TestFile.txt");
-                    Console.WriteLine("");
-                    Console.WriteLine("Input read from file:");
+                    Console.WriteLine("");                   
                     Console.WriteLine("----------");
                     Console.WriteLine(text);
                     Console.WriteLine("----------");
-                    Console.WriteLine("");
+                 
 
                     // creates a list that has all the processed text in it 
                     List<int> sorted_text = analyse.analyseText(text);
@@ -99,13 +100,10 @@ namespace CMP1903M_Assessment_1_Base_Code
                     report.Print_Dictionary(counted_text);
                     // asks the user if they want a long text file 
                     Console.WriteLine("do you want a long text file y/n");
-                    
-                    string LongWordFileChoice = Console.ReadLine();
-                    while (LongWordFileChoice != "y" && LongWordFileChoice != "n" )
-                       
-                           LongWordFileChoice = Console.ReadLine();
 
-                    if (LongWordFileChoice.ToLower() == "y")
+                    string LongTextChoice = longWord.LongWordOption();
+
+                    if (LongTextChoice.ToLower() == "y")
                     {
                         longWord.LongWordChoice(text);
                         //Write report of long words to LongWords.txt

@@ -12,7 +12,7 @@ namespace CMP1903M_Assessment_1_Base_Code
         public void reportOutput(List<int> sorted_text)
         {
             // splits each value individualy and outputs their meaning 
-            // Console.WriteLine("Sentences used --> = {0}", sorted_text[0], "\n Vowels used --> = {0}", sorted_text[1], "\n Consonants used --> = {0}", sorted_text[2], "\n Upper case letters used --> = {0}", sorted_text[3], "\n Lower case letters used --> = {0}", sorted_text[4]);
+            //Console.WriteLine("Sentences used --> = {0}", sorted_text[0] + "\n Vowels used --> = {0}", sorted_text[1] + "\n Consonants used --> = {0}", sorted_text[2] + "\n Upper case letters used --> = {0}", sorted_text[3] + "\n Lower case letters used --> = {0}", sorted_text[4]);
             Console.WriteLine("Sentences used --> = {0}", sorted_text[0]);
             Console.WriteLine("Vowels used --> = {0}", sorted_text[1]);
             Console.WriteLine("Consonants used --> = {0}", sorted_text[2]);

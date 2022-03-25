@@ -13,6 +13,8 @@ namespace CMP1903M_Assessment_1_Base_Code
             bool End = false;
             while (End != true)
             {
+                LongWord longWord = new LongWord();
+                
                 //creates start as an object 
                 Start start = new Start();
                 //define the string choice as blank 
@@ -60,16 +62,17 @@ namespace CMP1903M_Assessment_1_Base_Code
                     Console.WriteLine("do you want a long text file y/n");
 
                     string LongText = Console.ReadLine();
+
                     // checks if the user chose y
                     if (LongText.ToLower() == "y")
                     {
-                        
-                        Console.Clear();
+                        longWord.LongWordChoice(text);
+                        //Console.Clear();
                         //Writes a report of long words to LongWords.txt
-                        List<string> longWords = analyse.text_LongWords(text);
-                        // processes the longwords list writes it into a file
-                        report.WriteToFile(longWords, "LongWords.txt");
-                        Console.WriteLine("Long words have been written to: LongWords.txt");
+                        //List<string> longWords = analyse.text_LongWords(text);
+                        //processes the longwords list writes it into a file
+                        //report.WriteToFile(longWords, "LongWords.txt");
+                        //Console.WriteLine("Long words have been written to: LongWords.txt");
                     }
                 }
                 // checks if option 2 is selectd
@@ -104,21 +107,22 @@ namespace CMP1903M_Assessment_1_Base_Code
 
                     if (LongWordFileChoice.ToLower() == "y")
                     {
+                        longWord.LongWordChoice(text);
                         //Write report of long words to LongWords.txt
-                        List<string> longWords = analyse.text_LongWords(text);
-                        // processes the longwords list writes it into a file
-                        report.WriteToFile(longWords, "LongWords.txt");
-                        Console.Clear();
-                        Console.WriteLine("Long words have been written to: LongWords.txt");
+                        //List<string> longWords = analyse.text_LongWords(text);
+                        //processes the longwords list writes it into a file
+                        //report.WriteToFile(longWords, "LongWords.txt");
+                        //Console.Clear();
+                        //Console.WriteLine("Long words have been written to: LongWords.txt");
                     }
-                    Console.Clear();
-                    Console.WriteLine("Long words have not been writen into a file");
-                    ;
+                    
+                    
+                    
 
 
                 }
 
-
+                Console.Clear();
 
             }
 

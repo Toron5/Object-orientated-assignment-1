@@ -30,7 +30,7 @@ namespace CMP1903M_Assessment_1_Base_Code
                 values.Add(0);
 
             }
-            // goes through tht efirst section of the list and counts for every sentence.
+            // goes through the first section of the list and counts for every sentence.
             for (int i = 0; i < input.Length; i++)
             {
                 //Checks for a full stop or question mark or exclamation mark
